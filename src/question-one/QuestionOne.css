@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+:root {
+  --font-raleway: "Raleway", sans-serif;
+}
+
+.search_label {
+  padding: 12px 11px 10px 11px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+  color: #fff;
+  margin-left: 3rem;
+  font-family: var(--font-raleway);
+}
+
+.search_input {
+  padding: 9px 14px 9px 8px;
+  border-radius: 0 4px 4px 0;
+  border: 2px solid #5d0cff;
+  outline: none;
+  width: 70%;
+  background: transparent;
+  font-size: medium;
+}
+
+.search_input::placeholder {
+  color: darkgrey;
+  font-family: var(--font-raleway);
+}
+
+.empty {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  color: #e6ad7e;
+  font-family: var(--font-raleway);
+}
