@@ -37,9 +37,12 @@ export const QuestionOne: React.FC<{ service: IDataService }> = () => {
   return (
     <SectionGroup>
       <SectionPanel>
-        <label className="search_label">Search</label>
+        <label className="search_label" id="Search">
+          Search
+        </label>
         <input
           type="text"
+          aria-labelledby="Search"
           className="search_input"
           placeholder="Enter more than 3 characters for results..."
           onChange={handleSearchTermChange}
