@@ -1,30 +1,13 @@
-# Skedulo Tech Test
-
-## Pre-Requisites
-
-- Node
-- Npm
-- Yarn
-
-## Installation Instructions
-Install:
-    ```yarn bootstrap```
-
-This installs everything for the App as well as the Server, so please don't run ```npm install``` (unless you also want to run it from the `server` folder)
-
-## Running the App
-Run:
-    ```yarn start```
-
-## Testing the App
-Run:
-    ```yarn test```
-
+# Skedulo Tech Test Submission
 
 ## Overview
 
-Hi! Welcome to the Skedulo frontend tech project. You will find the details for your test [here](./src/INSTRUCTIONS.md). Once you're ready reach out to your hiring manager and they will share some github names to add as collaborators who will review your submission.
+Hi! This is my submission for technical test.
+In this submission, I have installed date-fn library to format the start date and end date. I also use boostrap to style table which showed the list of jobs.
 
-Once you have completed the exercise it would be great to see a readme that contains some of your thinking while working through the test, constraints you worked within, some decisions and compromises you needed to make, and anything else you think would be interesting for the reviewers to know.
+To not show any data and clear result when no more than 3 characters have been entered, i thought about 'debounce technique' but turned out it was as simple as 'searchJob.length < 3' can solve the requirement perfectly.
+This test is a great opportunity for me to learn more about typescript interface since a lot of projects I worked before mostly with rest-api.
 
-Good luck! And if you have any questions, don't hesitate to contact your hiring manager.
+Finally, unfortunately this test came along with 2 other tests from my classes at school which will be happened this week. So I couldn't at more testcase.
+
+Thank you for reading my overview about the test. Iam looking forward to your reviews.

@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
-import { servicesVersion } from "typescript";
+import React, { useEffect, useState } from "react";
 import { IDataService } from "../common/types";
 import { Job } from "../common/types";
 import { SectionGroup } from "../components/section/SectionGroup";
 import { SectionPanel } from "../components/section/SectionPanel";
 import { DataService } from "../service/DataService";
+import { format } from "date-fns";
 
 import "./QuestionOne.css";
 
@@ -13,7 +13,6 @@ export const QuestionOne: React.FC<{ service: IDataService }> = () => {
     []
   );
   const [searchJob, setSearchJob] = useState("");
-  const typeTimeoutRef = useRef(null);
 
   const getJobsData = (name: any) => {
     const response = DataService.getJobsWithSearchTerm(name.toLowerCase());
@@ -25,19 +24,14 @@ export const QuestionOne: React.FC<{ service: IDataService }> = () => {
   function handleSearchTermChange(e: any) {
     const value = e.target.value;
     setSearchJob(value);
-
-    // typeTimeoutRef.current = setTimeout (() => {
-    //   const valueData = {
-    //     searchJob: value,
-    //   };
-    //   onSubmit(searchJob);
-    // }, 300);
   }
 
   useEffect(() => {
-    if (searchJob === "") {
+    if (searchJob.length < 3) {
       setJobData([]);
-    } else getJobsData(searchJob);
+    } else {
+      getJobsData(searchJob);
+    }
   }, [searchJob]);
 
   return (
@@ -67,8 +61,8 @@ export const QuestionOne: React.FC<{ service: IDataService }> = () => {
               {jobData.map((job) => (
                 <tr>
                   <td>{job.name}</td>
-                  <td>{job.start}</td>
-                  <td>{job.end}</td>
+                  <td>{format(Date.parse(job.start), "dd-MM-yyyy")}</td>
+                  <td>{format(Date.parse(job.end), "dd-MM-yyyy")}</td>
                   <td>#</td>
                 </tr>
               ))}
