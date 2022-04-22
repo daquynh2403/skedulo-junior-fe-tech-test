@@ -19,7 +19,5 @@ export interface IDataService {
   ) => Promise<Pick<Job, "name" | "start" | "end" | "contactId">[]>;
 
   //Contact Method
-  getContactName: (
-    contactId: number
-  ) => Promise<Pick<Contact, "contactName">[]>;
+  getContacts: () => Promise<Pick<Contact, "contactName" | "contactId">[]>;
 }

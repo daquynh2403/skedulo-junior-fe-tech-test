@@ -18,10 +18,7 @@ export const DataService: IDataService = {
   },
 
   //Contact Method
-  getContactName: (contactId: number) => {
-    const result = contacts.filter(
-      (contact) => contact.contactId === contactId
-    );
-    return Promise.resolve(result);
+  getContacts: () => {
+    return Promise.resolve(contacts);
   },
 };

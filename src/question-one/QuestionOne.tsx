@@ -14,23 +14,27 @@ export const QuestionOne: React.FC<{ service: IDataService }> = () => {
     Pick<Job, "name" | "start" | "end" | "contactId">[]
   >([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [contactName, setContactName] = useState<
-    Pick<Contact, "contactName">[]
+  const [contactData, setContactData] = useState<
+    Pick<Contact, "contactName" | "contactId">[]
   >([]);
-  const [contactId, setContactId] = useState(0);
 
-  const getJobsData = (name: any) => {
+  const getJobsData = (name: string) => {
     const response = DataService.getJobsWithSearchTerm(name.toLowerCase());
     response.then(function (result) {
       setJobData(result);
     });
   };
 
-  const getContactName = (contactId: number) => {
-    const response = DataService.getContactName(contactId);
+  const getContactData = () => {
+    const response = DataService.getContacts();
     response.then(function (result) {
-      setContactName(result);
+      setContactData(result);
     });
+  };
+
+  const getContactName = (id: number) => {
+    let res = contactData.find((contact) => contact.contactId === id);
+    return res?.contactName;
   };
 
   function handleSearchTermChange(e: React.FormEvent<HTMLInputElement>) {
@@ -41,11 +45,10 @@ export const QuestionOne: React.FC<{ service: IDataService }> = () => {
   useEffect(() => {
     if (searchTerm.length < 3) {
       setJobData([]);
+      setContactData([]);
     } else {
       getJobsData(searchTerm);
-      console.log(jobData);
-      getContactName(contactId);
-      console.log(contactName);
+      getContactData();
     }
   }, [searchTerm]);
 
@@ -81,8 +84,7 @@ export const QuestionOne: React.FC<{ service: IDataService }> = () => {
                   <td>{job.name}</td>
                   <td>{format(Date.parse(job.start), "dd-MM-yyyy")}</td>
                   <td>{format(Date.parse(job.end), "dd-MM-yyyy")}</td>
-                  {/* {setContactId(job.contactId)} */}
-                  <td>#</td>
+                  <td>{getContactName(job.contactId)}</td>
                 </tr>
               ))}
             </tbody>
@@ -93,16 +95,6 @@ export const QuestionOne: React.FC<{ service: IDataService }> = () => {
           <h4>No jobs found</h4>
         </div>
       )}
-      <SectionPanel>
-        {jobData.map((job) => (
-          <>
-            {setContactId(job.contactId)}
-            {contactName.map((contactNames) => (
-              <h5>{contactNames.contactName}</h5>
-            ))}
-          </>
-        ))}
-      </SectionPanel>
     </SectionGroup>
   );
 };

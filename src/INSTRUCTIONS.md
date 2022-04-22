@@ -8,7 +8,7 @@ And finally when the results are displayed we will need to see:
 
 - The job’s name
 - The start and end date of the job
-- The name of the Contact assigned to the job ?
+- The name of the Contact assigned to the job
 
 Note: We have provided a `service` prop to the component that is defined in /src/service/DataService.js. It has methods you can use to retrieve the list of jobs to display.
 
