@@ -1,0 +1,12 @@
+{
+  "contacts": [
+    {
+      "contactId": 0,
+      "contactName": "Coraline Jones"
+    },
+    {
+      "contactId": 1,
+      "contactName": "Wybie Lovat"
+    }
+  ]
+}
