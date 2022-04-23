@@ -4,7 +4,7 @@
 
 Hi! This is my submission for technical test.
 
-In this submission, I have installed date-fn library to format the start date and end date. I also use boostrap to style table which showed the list of jobs.
+In this submission, I have installed date-fn library to format the start date and end date. I also use bootstrap to style table which showed the list of jobs.
 
 To not show any data and clear result when no more than 3 characters have been entered, i thought about 'debounce technique' but turned out it was as simple as 'searchJob.length < 3' can solve the requirement perfectly.
 
