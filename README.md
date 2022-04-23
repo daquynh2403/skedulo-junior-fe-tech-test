@@ -12,6 +12,6 @@ To show contact name but there is no data of contact name in db.json. So I creat
 
 I have learned a lot of typescript and reactjs knowledge via this test.
 
-Unfortunately this test came along with 2 other tests from my classes at school which will be happened this week. So I couldn't at more testcase.
+Unfortunately this test came along with 2 other tests from my classes at school which will be happened this week. So I couldn't add more testcase.
 
 Thank you for reading my overview about the test. Iam looking forward to your reviews.
